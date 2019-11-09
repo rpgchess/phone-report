@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html ng-app="Report">
+<head>
+	<meta charset="UTF-8">
+	<title>Relatório do Alterdata</title>
+	
+	<link rel="stylesheet" href="css/style.css">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script src="js/report.module.js"></script>
+	<script src="js/report.controller.js"></script>
+</head>
+<body>
+	<div class="container" ng-controller="ReportController">
+		<h1>{{ titulo }}</h1>
+		<form class="form-clients" ng-submit="adicionarClient()">
+			<h1>Adicionar Cliente:</h1>
+			<div class="form-campo medio">
+				<label for="nome">Nome:</label>
+				<input type="text" id="nome" ng-model="novoClient.nome">
+			</div>
+			<div class="form-campo pequeno">
+				<label for="data">Data:</label>
+				<input type="number" id="data" ng-model="novoClient.data">
+			</div>
+			<div class="form-campo pequeno">
+				<label for="hora">Hora:</label>
+				<input type="number" id="hora" ng-model="novoClient.hora">
+			</div>
+			<div class="form-campo medio">
+				<label for="CNPJ">CNPJ:</label>
+				<input type="text" id="CNPJ" ng-model="novoClient.CNPJ">
+			</div>
+			<div class="form-campo medio">
+				<label for="empresa">Empresa:</label>
+				<input type="text" id="empresa" ng-model="novoClient.empresa">
+			</div>
+			<div class="form-campo medio">
+				<label for="produto">Produto:</label>
+				<input type="text" id="produto" ng-model="novoClient.produto">
+			</div>
+			<div class="form-campo pequeno">
+				<label for="ns">N/S:</label>
+				<input type="text" id="ns" ng-model="novoClient.ns">
+			</div>
+			<div class="form-campo">
+				<label for="defeito">Defeito:</label>
+				<input type="text" id="defeito" ng-model="novoClient.defeito">
+			</div>
+			<div class="form-campo">
+				<label for="solucao">Solução:</label>
+				<input type="text" id="solucao" ng-model="novoClient.solucao">
+			</div>
+			<div class="form-campo pequeno">
+				<label for="atendimento">Nº Atendimento:</label>
+				<input type="text" id="atendimento" ng-model="novoClient.atendimento">
+			</div>
+			
+			<footer>
+				<button type="reset">Limpar</button>
+				<button type="submit">Salvar</button>
+			</footer>
+		</form>
+		<br><hr><br>
+		<div class="lista-clients">
+			<div class="client com-cartaz" ng-repeat="client in clients">
+				<h1>{{ client.nome }}</h1>
+				<button class="del" title="Excluir" ng-click="removerClient(client.id)"></button>
+				<ul>
+					<li><strong>Data:</strong> {{ client.data }}</li>
+					<li><strong>Hora:</strong> {{ client.hora }}</li>
+					<li><strong>CPNJ:</strong> {{ client.CNPJ }}</li>
+					<li><strong>Empresa:</strong> {{ client.empresa }}</li>
+					<li><strong>Produto:</strong> {{ client.produto }}</li>
+					<li><strong>N/S:</strong> {{ client.ns }}</li>
+					<li><strong>Defeito:</strong> {{ client.defeito }}</li>
+					<li><strong>Solução:</strong> {{ client.solucao }}</li>
+					<li><strong>Atendimento:</strong> {{ client.atendimento }}</li>
+				</ul>
+			</div>	
+		</div>
+		<hr>
+	</div>
+	
+</body>
+</html>
