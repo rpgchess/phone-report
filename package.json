@@ -1,0 +1,27 @@
+{
+  "name": "phone-report",
+  "version": "1.0.0",
+  "description": "Aplicação web com AngularJS para visualização de relatórios de telefonia Alterdata",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx http-server -p 8080 -o",
+    "serve": "npx http-server -p 8080",
+    "dev": "npx live-server --port=8080 --open=index.html"
+  },
+  "keywords": [
+    "angularjs",
+    "telefonia",
+    "relatorios",
+    "alterdata"
+  ],
+  "author": "Claudio Almeida",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
+  }
+}
